@@ -4,21 +4,22 @@ A serverless data cleaning and reconciliation pipeline built with **Azure Functi
 
 ## Architecture
 
-```
+```text
 Upload s1_raw.csv          Upload s2_raw.csv
-       │                          │
-       ▼                          ▼
+       |                          |
+       v                          v
   [Azure Blob]              [Azure Blob]
   c1raw container           c2raw container
-       │                          │
-       ▼                          ▼
+       |                          |
+       v                          v
 [CleanSales1 Function]    [CleanSales2 Function]
   - Filter by region         - Filter by item
   - Group & aggregate        - Group & aggregate
   - Write cleaned CSV        - Write cleaned CSV
-       │                          │
-       └──────────┬───────────────┘
-                  ▼
+       |                          |
+       +----------+---------------+
+                  |
+                  v
          [Reconcile Function]
           - Merge both datasets
           - Write final.csv
@@ -47,8 +48,8 @@ Upload s1_raw.csv          Upload s2_raw.csv
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/sales-data-cleaning-pipeline.git
-cd sales-data-cleaning-pipeline
+git clone https://github.com/venkateshen/Data-pipeline.git
+cd Data-pipeline
 
 # 2. Create and activate a virtual environment
 python -m venv .venv
@@ -142,7 +143,7 @@ pytest tests/ -v
 
 ## Project Structure
 
-```
+```text
 sales-data-cleaning-pipeline/
 ├── CleanSales1/            # Function 1: cleans source-1 data
 │   ├── __init__.py         # HTTP trigger handler
@@ -165,16 +166,6 @@ sales-data-cleaning-pipeline/
 ├── tests/
 │   ├── test_pipeline.py    # pytest tests
 │   └── sample_blob_event.json
-├── host.json
-├── local.settings.json.example
-├── requirements.txt
-└── README.md
-```
-
-## License
-
-MIT
-� sample_blob_event.json
 ├── host.json
 ├── local.settings.json.example
 ├── requirements.txt
