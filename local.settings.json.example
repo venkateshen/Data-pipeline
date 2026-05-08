@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "BlobAccountName": "<your-storage-account-name>",
+    "BlobAccountKey": "<your-storage-account-key>",
+    "C1": "c1raw",
+    "C2": "c2raw",
+    "FINAL": "reconciled"
+  },
+  "ConnectionStrings": {}
+}

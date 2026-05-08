@@ -1,0 +1,19 @@
+# Azure Functions runtime
+azure-functions==1.17.0
+
+# Azure Blob Storage
+azure-storage-blob==12.19.0
+azure-common==1.1.28
+
+# Data processing
+pandas==2.1.4
+numpy==1.26.3
+
+# Testing
+pytest==7.4.4
+pytest-mock==3.12.0
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+requests==2.31.0
