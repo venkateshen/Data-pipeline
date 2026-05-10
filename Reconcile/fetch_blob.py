@@ -12,10 +12,7 @@ from io import StringIO
 import pandas as pd
 from azure.storage.blob import BlobServiceClient
 
-_blob_account_name = os.getenv("BlobAccountName")
-_blob_account_key = os.getenv("BlobAccountKey")
-
-_connection_string = f"DefaultEndpointsProtocol=https;AccountName={_blob_account_name};AccountKey={_blob_account_key};EndpointSuffix=core.windows.net"
+_connection_string = os.getenv("BlobConnectionString", "UseDevelopmentStorage=true")
 _blob_service_client = BlobServiceClient.from_connection_string(_connection_string)
 
 

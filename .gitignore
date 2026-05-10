@@ -28,7 +28,7 @@ htmlcov/
 dataset/generated.csv
 
 # IDE
-.vscode/
+
 .idea/
 *.swp
 *.swo

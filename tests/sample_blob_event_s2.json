@@ -1,7 +1,7 @@
 [
   {
     "topic": "/subscriptions/<subscription-id>/resourceGroups/sales-pipeline-rg/providers/Microsoft.Storage/storageAccounts/<storage-account>",
-    "subject": "/blobServices/default/containers/c1raw/blobs/s1_raw.csv",
+    "subject": "/blobServices/default/containers/c2raw/blobs/s2_raw.csv",
     "eventType": "Microsoft.Storage.BlobCreated",
     "eventTime": "2024-01-15T10:00:00.0000000Z",
     "id": "example-event-id-1234",
@@ -13,7 +13,7 @@
       "contentType": "text/csv",
       "contentLength": 4130,
       "blobType": "BlockBlob",
-      "url": "http://127.0.0.1:10000/devstoreaccount1/c1raw/s1_raw.csv",
+      "url": "http://127.0.0.1:10000/devstoreaccount1/c2raw/s2_raw.csv",
       "sequencer": "00000000000000000000000000000001",
       "storageDiagnostics": {
         "batchId": "example-batch-id"

@@ -20,11 +20,9 @@ from azure.storage.blob import BlobServiceClient
 
 from . import fetch_blob as fetching_service
 
-_blob_account_name = os.getenv("BlobAccountName")
-_blob_account_key = os.getenv("BlobAccountKey")
+_connection_string = os.getenv("BlobConnectionString", "UseDevelopmentStorage=true")
 _out_container = os.getenv("FINAL", "reconciled")
 
-_connection_string = f"DefaultEndpointsProtocol=https;AccountName={_blob_account_name};AccountKey={_blob_account_key};EndpointSuffix=core.windows.net"
 _blob_service_client = BlobServiceClient.from_connection_string(_connection_string)
 
 

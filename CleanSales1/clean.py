@@ -22,11 +22,9 @@ from azure.storage.blob import BlobServiceClient
 # ---------------------------------------------------------------------------
 # Azure Blob configuration — values come from Application Settings / local.settings.json
 # ---------------------------------------------------------------------------
-_blob_account_name = os.getenv("BlobAccountName")
-_blob_account_key = os.getenv("BlobAccountKey")
+_connection_string = os.getenv("BlobConnectionString", "UseDevelopmentStorage=true")
 _out_container = os.getenv("C1", "c1raw")  # container where cleaned file is written
 
-_connection_string = f"DefaultEndpointsProtocol=https;AccountName={_blob_account_name};AccountKey={_blob_account_key};EndpointSuffix=core.windows.net"
 _blob_service_client = BlobServiceClient.from_connection_string(_connection_string)
 
 TARGET_REGION = "east"  # Only keep rows for this region after aggregation
